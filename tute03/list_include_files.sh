@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/bin/dash
 
-for file in *.c; do
+for file in *.c
+do
     echo "$file includes:"
-    sed -En "s/^#include .(.*).$/    \1/p" count_words.c
+    sed -En 's/^#include ["<](.*)[">]$/    \1/p' "$file" 
 done
+
